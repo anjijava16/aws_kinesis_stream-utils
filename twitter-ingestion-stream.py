@@ -4,11 +4,11 @@ import json
 import boto3
 import tweepy
 
-consumer_key = '4KK13LhiImeNZM2CWXSoNy6RA'  # os.getenv("consumer_key")
-consumer_secret = 'sSlGIFQ18lJByhMO9jvrNJOip8hnupCt8ocrCGQBPOLkfQxmq0'  # os.getenv("consumer_secret")
+consumer_key = os.getenv("consumer_key")
+consumer_secret = os.getenv("consumer_secret")
 
-access_token = '2286105240-17NqPft3SxuCzpO89Uq9YqJQDIYELpnWkDvy17D'  # os.getenv("access_token")
-access_token_secret = 'LIrRWwmmFlhi4nubICVYmO7JppE0rczsY7KnYfgpmdttZ'  # os.getenv("access_token_secret")
+access_token = os.getenv("access_token")
+access_token_secret =os.getenv("access_token_secret")
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
