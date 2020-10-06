@@ -66,6 +66,7 @@ ordertwitterjsonFailures/!{firehose:error-output-type}/year=!{timestamp:yyyy}/mo
 
 ## Direct table creation Path ::
 
+```
 CREATE EXTERNAL TABLE orderjson (
 User string ,
 OrderId string ,
@@ -77,8 +78,10 @@ amt string )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
 LOCATION 's3://order-stream-firehose/json/2020/10/05/18/';
 
-
+```
 ## Partition Table 
+
+```
 CREATE EXTERNAL TABLE orderpartitiontbl (
 User string ,
 OrderId string ,
@@ -95,13 +98,18 @@ hour string)
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
 LOCATION 's3://order-stream-firehose/orderjson';
 
-msck repair table orderpartitiontbl;
+```
+
+# msck repair table orderpartitiontbl;
 
 
 ### UseCase 2::
-Twitter ---> Kinesis Stream ---> Kinesis Firehose ---> S3 ---> Athena 
+ # Twitter ---> Kinesis Stream ---> Kinesis Firehose ---> S3 ---> Athena 
 
 ## External TBL 
+
+```
+
 CREATE EXTERNAL TABLE `kinesis_stream.twitter`(
   `created_at` string COMMENT 'from deserializer', 
   `id` string COMMENT 'from deserializer', 
@@ -134,13 +142,18 @@ LOCATION
   's3://order-stream-error-firehouse/'
 TBLPROPERTIES ('transient_lastDdlTime'='1601947941')
 
+```
+
 
 https://github.com/neocortex/twitter-stream
 https://nicovibert.com/2019/07/30/twitter-apis-python-dynamodb/
 https://github.com/theemadnes/iot_anomaly_analytics
 
 
-ordertwitterinputjson
+# ordertwitterinputjson Partition Table 
+
+
+```
 
 
 CREATE EXTERNAL TABLE `kinesis_stream.ordertwitter`(
@@ -180,3 +193,6 @@ LOCATION
   's3://order-stream-firehose/ordertwitterinputjson/'
 TBLPROPERTIES ('transient_lastDdlTime'='1601947941')
   
+
+```
+
