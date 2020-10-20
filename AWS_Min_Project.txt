@@ -1,0 +1,17 @@
+
+ 
+ # Mini-Course: Amazon Web Services AWS
+
+
+- API Gateway
+- Lambda
+- Kinesis data stream
+- S3
+- DynamoDB
+- Kinesis Firehose delivery streams
+- Redshift
+- IAM & CloudWatch
+- Postman
+- Python code working with JSON & APIs
+- PowerBI
+- AWS Glue
