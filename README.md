@@ -14,26 +14,32 @@ iii. AWS Kinesis Data Analytics
 iv.  AWS kinesis Video
 
 # Project 1:
- 
+ ```
  Custom Python Code to generate push data ---> AWS EC2 ---> Point of Sale Steaming data ---> Kinesis Firehouse ----> Point of Sale Real time data analaytics
                                                                                                        |
 																									   |   ---> S3 ----> S3 Data lake
-																									   
+
+```
+
 # Project 1:
+```
 Roles --->POSAnalyticsRole ---> AWS Services :kinesis Anlaystics
           POSEc2Role ---> ec2
           POSEFirehouseRole ---> firehouse
           POSELambdaRole ---> lambda
           		  
 
+```
+
 
 #  Project 2:
- 
+
+```
  Custom Python Code --> EC2 ---> Kinesis Stream --> Lambda Functopm --_> Amazon DynamoDB ---> Amazon RedShift ---> Analytics /Reporting
                                         |--> Lambda ---> SNS ---->Alert to Phone 
+```
 
-
-ROles:
+# ROles:
    AWSLamdbaFullAccess
    AWSKinesisFullAccess 
    
@@ -50,7 +56,10 @@ vi agents.json (acccess Key,secury key, KineissStream OISDataStream) and datapro
 
 ## POS Flow 
 
+```
 POS Data ---> POS Stream ----> DynamoDB Ingest Function ----> POS RealtimeData ----> Analytics / Reporting 
+
+```
 
 {"User": "Lori Curry", "OrderId": 1, "ProductId": 1711, "StoreId": 4568, "InvoiceTime": "Mon Oct  5 14:17:53 2020", "units": 49, "amt": 187}
 
